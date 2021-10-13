@@ -35,19 +35,18 @@ class AlienInvasion:
 
             # Watch for keyboard and mouse events.
             #this for loop is considerded an "event loop" which is why we have to define the event.type later
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    sys.exit()
-
-            
 
     def _check_events(self):
         """Respond to keypresses and mouse events."""
         for event in pygame.event.get():
+            print(event.type)
             if event.type == pygame.QUIT:
                 sys.exit()
+            
             elif event.type == pygame.KEYDOWN:
+                print(f"event type: {event.type}")
                 if event.key == pygame.K_RIGHT:
+                    print(event.key)
                     self.ship.moving_right = True
                 elif event.key == pygame.K_LEFT:
                     self.ship.moving_left = True
